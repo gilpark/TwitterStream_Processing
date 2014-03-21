@@ -17,7 +17,7 @@ don't recommend to use this but look for search API.
 
  ---------------------
  
-* **Getstream ** - you can get Streaming data in two ways.
+* **Getstream** - you can get Streaming data in two ways.
 
 	 `stream = new Getstream();` //if you need non-stop streamin
 	 
