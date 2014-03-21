@@ -1,12 +1,20 @@
+/*
+Based on neufuture's 'SimpleTwitterStream' link : https://github.com/neufuture/SimpleTwitterStream/
+still there  are some errors.
+feedbacks are welcome.
+
+sendtogil on GitHub
+
+*/
+
 import java.util.*;
 
-/////////////////search variables/////////////////////////////////////////
-//!!set search terms otherwise it will sample tweets : it's not working
+/////////////////////////////search variables////////////////////////////////
+//!!set search terms otherwise it will sample tweets
 String terms[] = 
 {
   "google",
 };
-//String terms[] = {}; // TODO : SAMPLE TWEETS
 //set bouding box for chicago area : (41.8819,-87.678)
 // chagne locations if you need
 double lat = 41.8819;
@@ -33,8 +41,7 @@ void setup()
   tweetList = new ArrayList<Tweet>();
   stream = new Getstream(); //if you need non-stop streaming
   //stream = new Getstream(10); //set max tweets
-  stream.search(terms, box); //TODO : calling search() without args
-  //stream.search();
+  stream.search(); // search(terms, location);
 }
 
 void draw() 
@@ -68,4 +75,5 @@ void keyPressed()
   {
   }
 }
+
 

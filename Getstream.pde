@@ -15,7 +15,7 @@ class Getstream
   }
   ////////////////////////////////////////////////////////////////////////////////
 
-  //initialize twitter stream	
+  //initialize twitter stream  
   TwitterStream twitter = new TwitterStreamFactory().getInstance();
 
   double[][] loc = null;
@@ -29,7 +29,7 @@ class Getstream
     twitter.addListener(listener);
   }
 
-  Getstream(int maxtweets)	
+  Getstream(int maxtweets)  
   {
     //this.maxtweets = maxtweets;
     _maxtweets = maxtweets;
@@ -47,23 +47,31 @@ class Getstream
   }
 
   //search tweets
-  void search(String[] keywords, double[][] loc)
+  void search()
+  {    
+    twitter.sample();
+  }
+
+  void search(String[] keywords)
+  {    
+    FilterQuery query = new FilterQuery();
+    query.track(keywords);
+    twitter.filter(query);
+  }
+
+    void search(double[][] loc)
+  {    
+    FilterQuery query = new FilterQuery();
+    query.locations(loc);
+    twitter.filter(query);  
+  }
+
+    void search(String[] keywords, double[][] loc)
   {
-    if (keywords.length == 0 && loc == null) twitter.sample();
-
-    FilterQuery query = new FilterQuery(); //initialize fillterqurey
-
-    if (keywords.length == 0 && loc != null) query.locations(loc); //loc
-    if (keywords.length != 0 && loc != null) //keywords & loc
-    {
-     
+      
+      FilterQuery query = new FilterQuery();
       query.track(keywords);
       query.locations(loc);
-    }
-
-    if (keywords.length != 0 && loc == null) query.track(keywords); //keywords
-
-      println(query);
       twitter.filter(query);
   }
 
@@ -105,4 +113,5 @@ class Getstream
     }
   };
 }
+
 

@@ -4,12 +4,11 @@ TwitterStream_Processing
 
 Twitter streaming API for Processing by Gill.
 
+Get API key if you don't have it.
+
+[https://dev.twitter.com](https://dev.twitter.com)
+
 This app allows you to stream tweets from twitter using the TwitterStream API.
-
-if there is someone looking for searching old tweets
-
-don't recommend to use this but look for search API.
-
 
 
 >####[Past vs. Future](http://140dev.com/twitter-api-programming-tutorials/aggregating-tweets-search-api-vs-streaming-api/)
@@ -21,14 +20,15 @@ don't recommend to use this but look for search API.
 
 	 `stream = new Getstream();` //if you need non-stop streamin
 	 
-	 `stream = new Getstream(`_int_`); `//set max tweets you want to get
+	 `stream = new Getstream(num); `//set max tweets you want to get
 	 
 	
-	 its`search()`fn takes *two parameters* : location, keywords
+	 `search()`fn takes *two parameters* : location, keywords(w/o parameters it will sample )
 	* keywords - you can get tweets contain given search terms
 			
 			String terms[] = {"google",...};
 	* location - you can narrow down the result with given location
+
 
 
 
