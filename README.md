@@ -24,7 +24,7 @@ don't recommend to use this but look for search API.
 	 `stream = new Getstream(`_int_`); `//set max tweets you want to get
 	 
 	
-	 its `search()`fn takes *two parameters* : location, keywords
+	 its`search()`fn takes *two parameters* : location, keywords
 	* keywords - you can get tweets contain given search terms
 			
 			String terms[] = {"google",...};
